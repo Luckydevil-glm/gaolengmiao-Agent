@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #2563EB;
+  --primary-light: #3B82F6;
+  --primary-dark: #1D4ED8;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #1F2937;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 线条风格 Logo 动画 */
+.logo-line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 2s ease forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 科技感背景 */
+.tech-pattern {
+  background-image: 
+    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 卡片悬浮效果 */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* 按钮动画 */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-2.5 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary:hover {
+  @apply bg-primaryDark;
+  transform: translateY(-1px);
+}
+
+/* 输入框样式 */
+.input-field {
+  @apply w-full px-4 py-3 border border-neutral-200 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all;
+}
+
+/* 标签样式 */
+.tag {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.tag-blue {
+  @apply bg-primary/10 text-primary;
+}
+
+.tag-gray {
+  @apply bg-neutral-100 text-neutral-600;
+}
