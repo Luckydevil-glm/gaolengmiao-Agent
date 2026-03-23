@@ -134,7 +134,7 @@ const categories = [
   { name: '设计', icon: Brain, count: 1 },
 ]
 
-export default function AgentsPage() {
+function AgentsPageContent() {
   const searchParams = useSearchParams()
   const categoryParam = searchParams.get('category')
   
@@ -376,5 +376,26 @@ export default function AgentsPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+import { Suspense } from 'react'
+
+function AgentsPageLoading() {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-500">加载中...</p>
+      </div>
+    </div>
+  )
+}
+
+export default function AgentsPage() {
+  return (
+    <Suspense fallback={<AgentsPageLoading />}>
+      <AgentsPageContent />
+    </Suspense>
   )
 }
