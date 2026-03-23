@@ -70,7 +70,7 @@ export default function RegisterPage() {
         email: formData.email,
         phone: formData.phone,
         nickname: formData.nickname,
-        role: null as const, // 需要选择角色
+        role: null, // 需要选择角色
         createdAt: new Date().toISOString().split('T')[0],
       }
       
